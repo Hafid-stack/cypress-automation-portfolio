@@ -47,6 +47,17 @@ class ProductsPage {
       .click()
 
   }
+  addSecondProductToCart() {
+
+  cy.get(".product-image-wrapper")
+    .eq(1)
+    .scrollIntoView()
+    .trigger("mouseover")
+
+  cy.contains(".product-image-wrapper:eq(1) a", "Add to cart")
+    .click({ force: true })
+
+}
 
 }
 

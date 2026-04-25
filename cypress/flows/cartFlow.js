@@ -16,6 +16,22 @@ class CartFlow {
 
   }
 
+  addMultipleProductsToCart() {
+
+  HomePage.goToProducts()
+
+  ProductsPage.addFirstProductToCart()
+
+  cy.contains("Continue Shopping")
+    .click()
+
+  ProductsPage.addSecondProductToCart()
+
+  ProductsPage.viewCart()
+
+  CartPage.verifyProductVisible()
+
+}
 }
 
 export default new CartFlow()
